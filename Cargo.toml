@@ -1,0 +1,18 @@
+[package]
+name = "untitled2"
+version = "0.1.0"
+edition = "2024"
+build = "build.rs"
+
+[workspace]
+members = ["kernel"]
+resolver = "2"
+
+[build-dependencies]
+bootloader = { version = "0.11.17", default-features = false, features = ["bios"] }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
